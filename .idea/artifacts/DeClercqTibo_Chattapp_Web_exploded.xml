@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="DeClercqTibo-Chattapp:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/DeClercqTibo_Chattapp_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="DeClercqTibo-Chattapp/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="DeClercqTibo-Chattapp" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jackson-annotations-2.7.0" />
+          <element id="library" level="project" name="jackson-core-2.7.4" />
+          <element id="library" level="project" name="jackson-databind-2.7.4" />
+          <element id="library" level="project" name="javax.websocket-api-1.1" />
+          <element id="library" level="project" name="jstl-1.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
