@@ -9,7 +9,6 @@
 	<jsp:param name="title" value="Home" />
 </jsp:include>
 <body>
-<h2>Test</h2>
 	<jsp:include page="header.jsp">
 		<jsp:param name="title" value="Home" />
 	</jsp:include>
