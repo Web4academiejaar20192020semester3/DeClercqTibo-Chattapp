@@ -2,6 +2,6 @@
 
 <footer>
 	<span class="right"> &copy; Webontwikkeling 4, UC
-		Leuven-Limburg 
+		Tibo De Clercq
 	</span>		
 </footer>

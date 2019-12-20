@@ -7,18 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class AddFriend extends AsynReqHandler {
+public class ChangeStatus extends AsynReqHandler {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        PersonService personService = super.getPersonService();
         HttpSession session = request.getSession();
-
         Person user = (Person) session.getAttribute("user");
-        String userID = request.getParameter("userid");
-        Person newFriend = personService.getPerson(userID);
+        String status = request.getParameter("status");
+        user.setStatus(status);
 
-        user.addFriend(newFriend);
-        newFriend.addFriend(user);
         return "";
     }
 }

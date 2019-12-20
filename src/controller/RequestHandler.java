@@ -1,20 +1,18 @@
 package controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import domain.PersonService;
 import domain.Person;
+import domain.PersonService;
 import domain.Role;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public abstract class RequestHandler {
 	
 	private PersonService personService;
 	
-	public abstract String handleRequest (HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException, IOException;
+	public abstract String handleRequest (HttpServletRequest request, HttpServletResponse response)throws IOException;
 	
 	public void setModel (PersonService personService) {
 		this.personService = personService;

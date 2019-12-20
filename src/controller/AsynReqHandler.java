@@ -6,16 +6,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public abstract class AsynRequestHandler extends RequestHandler{
+public abstract class AsynReqHandler extends RequestHandler {
     private PersonService personService;
 
-    public abstract String handleRequest (HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public abstract String handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException;
 
-    public void setModel (PersonService personService) {
+    public void setModel(PersonService personService) {
         this.personService = personService;
     }
 
     public PersonService getPersonService() {
         return personService;
     }
+
 }

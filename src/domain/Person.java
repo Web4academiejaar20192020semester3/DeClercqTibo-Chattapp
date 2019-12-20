@@ -1,12 +1,13 @@
 package domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,17 +18,41 @@ public class Person {
 	private String salt;
 	private String firstName;
 	private String lastName;
+	@JsonIgnore
 	private Role role;
-	//Vrienden collectie
-	private ArrayList<Person> vrienden = new ArrayList<>();
+	private String status;
+	@JsonIgnore
+	private ArrayList<Person> friends = new ArrayList<>();
+	@JsonIgnore
+	private Conversation conversation;
+	private String Gender;
+	private int age;
+
+	public String getGender() {
+		return Gender;
+	}
+
+	public void setGender(String gender) {
+		Gender = gender;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
 
 	public Person(String userId, String password, String firstName,
-			String lastName,Role role) {
+				  String lastName, Role role) {
 		setUserId(userId);
 		setHashedPassword(password);
 		setFirstName(firstName);
 		setLastName(lastName);
 		setRole(role);
+		setStatus("Online");
+		conversation= new Conversation(this,this);
 	}
 
 	public Person(String userId, String password, String salt,
@@ -38,9 +63,14 @@ public class Person {
 		setFirstName(firstName);
 		setLastName(lastName);
 		setRole(role);
+		conversation= new Conversation(this,this);
 	}
 
 	public Person() {
+
+		setStatus("Online");
+		conversation= new Conversation(this,this);
+		setRole(Role.LID);
 	}
 
 	public Role getRole() {
@@ -151,12 +181,35 @@ public class Person {
 		}
 		this.lastName = lastName;
 	}
-
-	public ArrayList<Person> getVrienden() {
-		return vrienden;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setVrienden(ArrayList<Person> vrienden) {
-		this.vrienden = vrienden;
+	public void setStatus(String status) {
+		this.status = status;
 	}
+
+	public void addFriend(Person friend) {
+		friends.add(friend);
+	}
+
+	public ArrayList<Person> getFriends() {
+		return friends;
+	}
+
+	public void setFriends(ArrayList<Person> friends) {
+		this.friends = friends;
+	}
+
+	public Conversation getConversation() {
+		return conversation;
+	}
+
+	public void setConversation(Conversation conversation) {
+		this.conversation = conversation;
+	}
+	public String getChatter(){
+		return conversation.getChatter(this).getUserId();
+	}
+
 }

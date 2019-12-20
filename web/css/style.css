@@ -51,7 +51,7 @@ p>label {
 	color: #666;
 }
 
-input[type="text"],input[type="email"],input[type="password"],input[type="number"]
+/*input[type="text"],input[type="email"],input[type="password"],input[type="number"]
 	{
 	border: 1px solid #aaa;
 	color: #666;
@@ -67,9 +67,9 @@ input[type="text"],input[type="email"],input[type="password"],input[type="number
 	box-shadow: inset 0px 1px 4px #ECECEC;
 	-moz-box-shadow: inset 0px 1px 4px #ECECEC;
 	-webkit-box-shadow: inset 0px 1px 4px #ECECEC;
-}
+}*/
 
-input[type="submit"],button {
+/*input[type="submit"],button {
 	border: 1px solid #aaa;
 	color: #666;
 	height: 30px;
@@ -82,15 +82,15 @@ input[type="submit"],button {
 	box-shadow: inset 0px 1px 4px #ECECEC;
 	-moz-box-shadow: inset 0px 1px 4px #ECECEC;
 	-webkit-box-shadow: inset 0px 1px 4px #ECECEC;
-}
+}*/
 
 fieldset {
 	border: 1px solid #999;
 }
 
-.form-group {
+/*.form-group {
 	margin-bottom: 15px;
-}
+}*/
 
 fieldset {
 	border: 1px solid #999;
@@ -110,7 +110,10 @@ ul {
 	list-style-type: none;
 	margin-left: 20px;
 }
-
+.topic{
+	margin-top: 30px;
+}
+/*
 nav ul {
 	list-style-type: none;
 	margin-bottom: 40px;
@@ -133,12 +136,5 @@ nav ul li:last-child {
 nav ul li a {
 	text-decoration: none;
 	color: #000;
-}
+}*/
 
-nav ul li a#actual {
-	border-bottom: 1px solid black;
-}
-
-nav ul li#current {
-	border-bottom: 1px solid black;
-}
