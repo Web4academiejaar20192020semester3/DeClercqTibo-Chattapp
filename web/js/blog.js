@@ -1,4 +1,4 @@
-var webSocket = new WebSocket("ws://localhost:8080/ChatApp_Web_exploded/comment");
+var webSocket = new WebSocket("ws://localhost:8080/DeClercqTibo_Chattapp_Web_exploded/comment");
 webSocket.onmessage = function (event) {
     var data = JSON.parse(event.data);
     var blogComment= document.getElementById(data.topicId);
